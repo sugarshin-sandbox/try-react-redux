@@ -1,16 +1,16 @@
 import jsonpP from 'jsonp-p';
 
+import * as types from './constants/ActionTypes';
+
 // Action createor
 export function increment() {
-  return { type: 'INCREMENT' };
+  return { type: types.INCREMENT };
 }
 
 export function incrementL() {
   return dispatch => {
     return jsonpP('http://www.mocky.io/v2/561f339d110000d8159aca24')
       .then(res => {
-        console.log(res);
-        {message: "HiiiiiiHaaaaa"}
         if (res.message === 'HiiiiiiHaaaaa') {
           dispatch(increment10());
         }
@@ -19,15 +19,15 @@ export function incrementL() {
 }
 
 export function increment10() {
-  return { type: 'INCREMENT_L' };
+  return { type: types.INCREMENT_L };
 }
 
 export function incrementBy(number) {
-  return { type: 'INCREMENT_BY', number };
+  return { type: types.INCREMENT_BY, number };
 }
 
 export function decrement() {
-  return { type: 'DECREMENT' };
+  return { type: types.DECREMENT };
 }
 
 export function incrementAsync() {
