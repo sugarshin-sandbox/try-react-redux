@@ -1,0 +1,28 @@
+{
+  "name": "try-react-redux",
+  "description": "try-react-redux",
+  "scripts": {
+    "start": "budo main.js -ol -- -t [ babelify --stage 1 ] --extension='.jsx' | garnish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sugarshin-sandbox/try-react-redux"
+  },
+  "author": "sugarshin",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^5.8.25",
+    "jsonp-p": "^1.0.1",
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0",
+    "react-redux": "^3.1.0",
+    "redux": "^3.0.2",
+    "redux-logger": "^2.0.3",
+    "redux-thunk": "^1.0.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "budo": "^5.1.4",
+    "garnish": "^3.2.1"
+  }
+}
