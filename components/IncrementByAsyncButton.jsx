@@ -7,7 +7,7 @@ function getRandomInt(max) {
 export default class IncrementByAsyncButton extends Component {
   render() {
     return (
-      <button onClick={() => this.props.incrementByAsync(getRandomInt(10))}>IncrementByAsync</button>
+      <button onClick={() => this.props.fetchJSONP()}>fetchJSONP</button>
     );
   }
 }

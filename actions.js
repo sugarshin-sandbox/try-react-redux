@@ -7,14 +7,30 @@ export function increment() {
   return { type: types.INCREMENT };
 }
 
-export function incrementL() {
+function requestJSONP() {
+  return {
+    type: types.REQUEST_JSONP
+  }
+}
+
+// function successJSONP() {
+//   return {
+//     type: types.SUCCESS_JSONP
+//   }
+// }
+
+function failureJSONP(error) {
+  return {
+    type: types.FAILURE_JSONP,
+    error
+  }
+}
+
+export function fetchJSONP() {
   return dispatch => {
-    return jsonpP('http://www.mocky.io/v2/561f339d110000d8159aca24')
-      .then(res => {
-        if (res.message === 'HiiiiiiHaaaaa') {
-          dispatch(increment10());
-        }
-      });
+    return jsonpP('http://www.mocky.io/v2/5620fa26120000d4340113b4')
+      .then(json => dispatch(incrementBy(json.count)))
+      .catch(err => dispatch(failureJSONP(err)));
   };
 }
 
