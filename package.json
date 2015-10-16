@@ -2,7 +2,7 @@
   "name": "try-react-redux",
   "description": "try-react-redux",
   "scripts": {
-    "start": "budo main.js -ol -- -t [ babelify --stage 1 ] --extension='.jsx' | garnish"
+    "start": "budo main.jsx:main.js -ol -- -t [ babelify --stage 1 ] --extension='.jsx' | garnish"
   },
   "repository": {
     "type": "git",
