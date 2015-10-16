@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import App from './container/app';
 import configureStore from './store/configureStore';
 
-const initialState = 10;
+const initialState = { count: 0 };
 const store = configureStore(initialState);
 
 const rootEl = document.createElement('div');

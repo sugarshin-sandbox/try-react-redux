@@ -8,29 +8,28 @@ import IncrementAsyncButton from '../components/IncrementAsyncButton';
 import IncrementByAsyncButton from '../components/IncrementByAsyncButton';
 import * as actions from '../actions';
 
-function mapStateToProps(state) {
-  return {
-    value: state
-  };
-}
+const mapStateToProps = state => {
+  return { ...state };
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return {
     actions: bindActionCreators(actions, dispatch)
   };
-}
+};
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class App extends Component {
   render() {
-    const { actions } = this.props;
+    const { actions, count } = this.props;
+
     return (
       <div className="app">
-        <IncrementButton {...actions} />
+        <IncrementButton actions={actions} />
         <DecrementButton {...actions} />
         <IncrementAsyncButton {...actions} />
         <IncrementByAsyncButton {...actions} />
-        <span>{this.props.value}</span>
+        <span>{count}</span>
       </div>
     );
   }
