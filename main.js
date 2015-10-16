@@ -11,13 +11,10 @@ const initialState = 10;
 const store = configureStore(initialState);
 
 const rootEl = document.createElement('div');
-rootEl.id = 'root';
 document.body.appendChild(rootEl);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Provider store={store}><App /></Provider>,
   rootEl
 );
 
